@@ -2,22 +2,25 @@
 <html>
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-    <title>life</title>
+    <title>simulator</title>
 </head>
 <body style="background: gray;">
+    <pre>CA Simulator v0.0.0</pre>
     <div>
-        <div id="config"></div>
-        <div id="stats"></div>
         <div><canvas id="canvas"></canvas></div>
-        <div><button id="play-pause"></button></div>
+        <div><button id="control"></button></div>
+
+        <p><details open><summary>stats</summary>
+            <div id="stats"></div>
+        </details></p>
     </div>
 
     <script type="module">
-    import Life from './life.esm.js'; // prod
-    //import Life from '../pkg-es-pack/life.esm.dev.js'; // dev
+    import Sim from './simulator.esm.js'; // prod
+    //import Sim from '../pkg-es-pack/simulator.esm.dev.js'; // dev
 
-    Life.create()
-        .then(life => life.app(Life.ffi))
+    Sim.create()
+        .then(sim => sim.app(Sim.ffi))
         .catch(err => console.error(err));
     </script>
 </body>
